@@ -22,13 +22,17 @@ This project is a simple web application built using Flask that allows users to 
 1. **Clone the repository**:
 
    git clone https://github.com/yourusername/wikisearch.git
+
    cd wikisearch
 
 2. **Run the setup script**:
+
    ./setup.bat
 
 3. **Activate the virtual environment and start the application**:
+
    venv\Scripts\activate
+
    python app.py
 
 ### Unix-based Systems (Linux/Mac)
@@ -36,13 +40,16 @@ This project is a simple web application built using Flask that allows users to 
 1. **Clone the repository**:
 
    git clone https://github.com/yourusername/wikisearch.git
+
    cd wikisearch
 
 2. **Run the setup script**:
    ./setup.sh
 
 3. **Activate the virtual environment and start the application**:
+
    source venv/bin/activate
+
    python app.py
 
 ## Usage
@@ -58,4 +65,5 @@ This project is a simple web application built using Flask that allows users to 
 3. **View articles**:
 
    Click on the article title to toggle the embedded article within the page.
+
    Click on "Go to article" to open the full Wikipedia article in a new tab.
