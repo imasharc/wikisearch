@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <a href="/">Back to search</a>
+    <h1>Search Results for "{{ query }}"</h1>
+    <ul id="results-list">
+        {% for result in results %}
+        <li>
+            <h2>
+                <a href="#" onclick="toggleArticle('{{ result.url }}', '{{ loop.index0 }}'); 'return false;'">{{ result.title }}</a>
+            </h2>
+            <p>{{ result.description }}</p>
+            <div class="article-container" id="article-container-{{ loop.index0 }}">
+                <a href="{{ result.url }}" target="_blank">Go to article</a>
+                <iframe id="article-frame-{{ loop.index0 }}" src=""></iframe>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
