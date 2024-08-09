@@ -1,13 +1,15 @@
-﻿# Flask Wikipedia Search
+﻿# [Flask Wikipedia Search](https://trywikisearch.azurewebsites.net/)
 
-This project is a simple web application built using Flask that allows users to search Wikipedia articles. The application fetches the top 10 search results from Wikipedia and displays them. Users can click on the article titles to view the embedded Wikipedia article directly on the page or open the article in a new tab.
+This project is a simple web application built using Flask that allows users to search Wikipedia articles. The application fetches the top search results from Wikipedia and displays them. Users can click on the article titles to view the embedded Wikipedia article directly on the page or open the article in a new tab. User can also search for images, view them and go to their source link.
 
 ## Features
 
 - Search Wikipedia articles by entering a search term.
-- Display the top 10 search results with titles, snippets, and links.
+- Display set limit of search results with titles, snippets, and links.
+- Display set limit of image results with titles, media, and source links.
 - Click on article titles to toggle the embedded Wikipedia article within the page.
-- Open the full Wikipedia article in a new tab.
+- Click on image title to toggle the original image within the page.
+- Open the full Wikipedia article/image in a new tab.
 
 ## Prerequisites
 
