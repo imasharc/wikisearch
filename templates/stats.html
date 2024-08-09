@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Stats</title>
+</head>
+<body>
+    <h1>Search Stats</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Last Time</th>
+                <th>Search Phrase</th>
+                <th>Type</th>
+                <th>Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log.last_search_time }}</td>
+                <td>{{ log.search_phrase }}</td>
+                <td>{{ log.search_type }}</td>
+                <td>{{ log.frequency }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <button onclick="location.href='/'">Back to Search</button>
+</body>
+</html>
