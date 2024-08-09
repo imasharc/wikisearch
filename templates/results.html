@@ -10,18 +10,27 @@
     <a href="/">Back to search</a>
     <h1>Search Results for "{{ query }}"</h1>
     <ul id="results-list">
-        {% for result in results %}
-        <li>
-            <h2>
-                <a href="#" onclick="toggleArticle('{{ result.url }}', '{{ loop.index0 }}'); 'return false;'">{{ result.title }}</a>
-            </h2>
-            <p>{{ result.description }}</p>
-            <div class="article-container" id="article-container-{{ loop.index0 }}">
-                <a href="{{ result.url }}" target="_blank">Go to article</a>
-                <iframe id="article-frame-{{ loop.index0 }}" src=""></iframe>
-            </div>
-        </li>
-        {% endfor %}
+        {% if search_type == 'image' %}
+            {% for result in results %}
+            <li>
+                <h2><a href="#" onclick="toggleImage('{{ result.url }}', '{{ loop.index0 }}'); return false;">{{ result.title }}</a></h2>
+                <div class="image-container" id="image-container-{{ loop.index0 }}" style="display: none;">
+                    <a id="source-link-{{ loop.index0 }}" class="source-link" href="{{ result.url }}" target="_blank" style="display: none;">(go to source)</a>
+                    <img id="image-{{ loop.index0 }}" src="" alt="{{ result.title }}" class="wiki-image">
+                </div>
+            </li>
+            {% endfor %}
+        {% else %}
+            {% for result in results %}
+            <li>
+                <h2><a href="#" onclick="toggleArticle('{{ result.url }}', '{{ loop.index0 }}'); return false;">{{ result.title }}</a></h2>
+                <div class="article-container" id="article-container-{{ loop.index0 }}" style="display: none;">
+                    <a id="source-link-{{ loop.index0 }}" class="source-link" href="{{ result.url }}" target="_blank" style="display: none;">(go to source)</a>
+                    <iframe id="article-frame-{{ loop.index0 }}" src="" width="100%" height="600px" style="border: none;"></iframe>
+                </div>
+            </li>
+            {% endfor %}
+        {% endif %}
     </ul>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
