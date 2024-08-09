@@ -22,8 +22,33 @@
             <label for="limit">Number of results:</label>
             <input type="number" id="limit" name="limit" min="1" value="10">
         </div>
+
         <button type="submit">Search</button>
+
+    <br>
+
+    <button type="button" onclick="toggleLearnAboutDataLoggedDataPanel()">Learn About Logged Data</button>
+    <div id="learn-about-logged-data-panel" style="display: none; margin-top: 10px;">
+        <p>Logs are stored by default: we collect the following data:</p>
+        <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+{
+    "last_search_time": "2024-08-09T12:34:56.789Z",
+    "search_phrase": "example search phrase",
+    "search_type": "general" or "image",
+    "frequency": 1
+}
+        </pre>
+        <label>
+            <input type="checkbox" name="opt_out" value="yes">
+            Do not store my search data
+        </label>
+    </div>
+
+    <br>
+
     </form>
+
+    <button onclick="location.href='/stats'">View Search Stats</button>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
